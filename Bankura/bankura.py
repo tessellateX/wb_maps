@@ -24,7 +24,7 @@ for x in features:
     polygons.append(Polygon(poly_points))
 #
 #
-result = pd.read_csv('../datasets/processed/final.csv')
+result = pd.read_csv('../datasets/processed/mouzas.csv')
 for idx, row in result.iterrows():
     print('Percentage loaded {0:.3f}\r'.format(idx*100.0/result.shape[0]), end='')
     point = Point([row['longitude'], row['latitude']])
