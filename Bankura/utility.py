@@ -55,6 +55,7 @@ def save_mouzas_of_district(dist_name):
         for oid, ac_poly in ac_polygons:
             if ac_poly.contains(mouza_point):
                 dist_mouzas.append({
+                    'id':mouza['id'],
                     'name':mouza['name'],
                     'longitude':mouza['longitude'],
                     'latitude':mouza['latitude'],
@@ -63,7 +64,7 @@ def save_mouzas_of_district(dist_name):
                 })
                 break
 
-    pd.DataFrame(dist_mouzas)[['name', 'jl_number', 'longitude', 'latitude', 'ac_id']].to_csv('{}_mouzas.csv'.format(dist_name), index=False)
+    pd.DataFrame(dist_mouzas)[['id', 'name', 'jl_number', 'longitude', 'latitude', 'ac_id']].to_csv('{}_mouzas.csv'.format(dist_name), index=False)
     print('\nMouzas Saved')
 
 if __name__ == '__main__':
